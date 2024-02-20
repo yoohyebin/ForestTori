@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E1AE6FE2B7E185B001C9A30 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE6FD2B7E185B001C9A30 /* Font+.swift */; };
+		0E1AE7002B7E1880001C9A30 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE6FF2B7E1880001C9A30 /* MainView.swift */; };
+		0E1AE7032B7E1892001C9A30 /* PlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE7022B7E1892001C9A30 /* PlantView.swift */; };
+		0E1AE7052B7E18AF001C9A30 /* PlantPotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AE7042B7E18AF001C9A30 /* PlantPotView.swift */; };
 		0E2D96C32B635759006CAAC4 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0E2D96C22B635759006CAAC4 /* Realm */; };
 		0E2D96C52B635759006CAAC4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E2D96C42B635759006CAAC4 /* RealmSwift */; };
 		0EADEA582B7DEB0C0036D190 /* ground_maple.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA532B7DEB0C0036D190 /* ground_maple.usdz */; };
@@ -74,6 +78,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E1AE6FD2B7E185B001C9A30 /* Font+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
+		0E1AE6FF2B7E1880001C9A30 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		0E1AE7022B7E1892001C9A30 /* PlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantView.swift; sourceTree = "<group>"; };
+		0E1AE7042B7E18AF001C9A30 /* PlantPotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPotView.swift; sourceTree = "<group>"; };
 		0EADEA532B7DEB0C0036D190 /* ground_maple.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_maple.usdz; sourceTree = "<group>"; };
 		0EADEA542B7DEB0C0036D190 /* ground_cottontree.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_cottontree.usdz; sourceTree = "<group>"; };
 		0EADEA552B7DEB0C0036D190 /* ground_none.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_none.usdz; sourceTree = "<group>"; };
@@ -153,6 +161,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E1AE6FC2B7E182A001C9A30 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				5BA3954F2B7CF0900019A545 /* Font+.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		0E1AE7012B7E1883001C9A30 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0E1AE6FF2B7E1880001C9A30 /* MainView.swift */,
+				0E1AE7022B7E1892001C9A30 /* PlantView.swift */,
+				0E1AE7042B7E18AF001C9A30 /* PlantPotView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		0EADEA5D2B7DEB4F0036D190 /* Freesia_WithAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,7 +257,7 @@
 		0EADEAB42B7DF5140036D190 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				5BA395562B7E2EE80019A545 /* Font+.swift */,
+				0E1AE6FD2B7E185B001C9A30 /* Font+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -348,7 +374,7 @@
 			children = (
 				0EF5FE942B4FC02100D64E5E /* ForestTori */,
 				0EF5FE932B4FC02100D64E5E /* Products */,
-				5BA395552B7E2E5C0019A545 /* Recovered References */,
+				0E1AE6FC2B7E182A001C9A30 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -395,6 +421,7 @@
 			isa = PBXGroup;
 			children = (
 				0EF5FE972B4FC02100D64E5E /* ContentView.swift */,
+				0E1AE7012B7E1883001C9A30 /* Main */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -620,13 +647,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BA395442B7252C00019A545 /* GameManager.swift in Sources */,
+				0E1AE7002B7E1880001C9A30 /* MainView.swift in Sources */,
+				0E1AE7032B7E1892001C9A30 /* PlantView.swift in Sources */,
 				0EF5FEBF2B4FC47300D64E5E /* InitFile.swift in Sources */,
 				5BA931152B62604800F48AF1 /* Chapter.swift in Sources */,
 				0EF5FE982B4FC02100D64E5E /* ContentView.swift in Sources */,
 				5BA931132B62603200F48AF1 /* Plant.swift in Sources */,
+				0E1AE7052B7E18AF001C9A30 /* PlantPotView.swift in Sources */,
 				0EF5FE962B4FC02100D64E5E /* ForestToriApp.swift in Sources */,
 				5BA931192B6260CC00F48AF1 /* DataManager.swift in Sources */,
-				5BA395572B7E2EE80019A545 /* Font+.swift in Sources */,
+				0E1AE6FE2B7E185B001C9A30 /* Font+.swift in Sources */,
 				0EADEAB02B7DF4FD0036D190 /* InitFile.swift in Sources */,
 				0EADEAB32B7DF5110036D190 /* InitFile.swift in Sources */,
 				5BA931172B62605D00F48AF1 /* Mission.swift in Sources */,
