@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct MainView: View {
+    @StateObject var gameManger = GameManager()
+    
     @State private var selectedTab = 0
+    @State private var isShowSelectPlantView = true
     
     var body: some View {
         ZStack {
@@ -21,9 +24,24 @@ struct MainView: View {
                 
                 Spacer()
                 
-                PlantView()
+                PlantView(isShowSelectPlantView: $isShowSelectPlantView)
                 
                 customTabBar
+            }
+            
+            if isShowSelectPlantView {
+                Color.black.opacity(0.4)
+
+                Text("식물 친구를 선택해주세요")
+                    .font(.titleM)
+                    .foregroundColor(.white)
+                    .padding(.top, 160)
+                    .frame(maxHeight: .infinity, alignment: .top)
+                
+                VStack {
+                    SelectPlantView(isShowSelectPlantView: $isShowSelectPlantView)
+                        .environmentObject(gameManger)
+                }
             }
         }
         .ignoresSafeArea()
@@ -31,6 +49,7 @@ struct MainView: View {
 }
 
 // MARK: MainView Elements
+
 extension MainView {
     private var mainHeader: some View {
         HStack {
