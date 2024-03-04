@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct MainView: View {
-    @StateObject var gameManger = GameManager()
+    @StateObject var gameManager = GameManager()
+    @StateObject var viewModel = MainViewModel()
     
     @State private var selectedTab = 0
-    @State private var isShowSelectPlantView = true
+    @State private var isShowSelectPlantView = false
     
     var body: some View {
         ZStack {
@@ -25,26 +26,40 @@ struct MainView: View {
                 Spacer()
                 
                 PlantView(isShowSelectPlantView: $isShowSelectPlantView)
+                    .environmentObject(gameManager)
+                    .environmentObject(viewModel)
                 
                 customTabBar
             }
             
             if isShowSelectPlantView {
                 Color.black.opacity(0.4)
-
+                
                 Text("식물 친구를 선택해주세요")
                     .font(.titleM)
                     .foregroundColor(.white)
                     .padding(.top, 160)
                     .frame(maxHeight: .infinity, alignment: .top)
+                    
+                SelectPlantView(isShowSelectPlantView: $isShowSelectPlantView)
+                    .environmentObject(gameManager)
+            }
+            
+            if viewModel.isCompleteMission {
+                Color.black.opacity(0.4)
                 
-                VStack {
-                    SelectPlantView(isShowSelectPlantView: $isShowSelectPlantView)
-                        .environmentObject(gameManger)
-                }
+                CompleteMissionView()
+                    .environmentObject(gameManager)
             }
         }
         .ignoresSafeArea()
+        .onChange(of: gameManager.isSelectPlant) {
+            if  gameManager.isSelectPlant {
+                viewModel.setNewPlant(plant: gameManager.user.selectedPlant)
+            } else {
+                viewModel.setEmptyPot()
+            }
+        }
     }
 }
 
@@ -54,7 +69,7 @@ extension MainView {
     private var mainHeader: some View {
         HStack {
             Button {
-                //TODO: Move to Garden
+                // TODO: Move to Garden
             } label: {
                 Image("MainButton")
                     .resizable()

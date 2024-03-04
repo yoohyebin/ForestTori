@@ -8,36 +8,28 @@
 import SwiftUI
 
 struct PlantView: View {
-    @State private var isTapDoneButton = false
-    @State private var isShowDialogueBox = false
-    @State private var isShowAddButton = true
-    @State private var isShowMissionBox = false
+    @EnvironmentObject var gameManager: GameManager
+    @EnvironmentObject var viewModel: MainViewModel
     
     @Binding var isShowSelectPlantView: Bool
-    
-    private let plantName = "Emptypot.scn"
-//    private let plantName = "Dandelion1.scn"
-    private var plantWidth: CGFloat {
-        plantName == "Emptypot.scn" ? 200 : 350
-    }
     
     var body: some View {
         VStack(spacing: 0) {
             dialogueBox
-                .hidden(isShowDialogueBox)
+                .hidden(viewModel.isShowDialogueBox)
             
             Spacer()
             
             addNewPlantButton
-                .hidden(isShowAddButton)
+                .hidden(viewModel.isShowAddButton)
             
-            PlantPotView(sceneViewName: plantName)
+            PlantPotView(sceneViewName: viewModel.plant3DFileName)
                 .scaledToFit()
-                .frame(width: plantWidth)
+                .frame(width: viewModel.plantWidth)
                 .padding(.bottom, 16)
             
             missionBox
-                .hidden(isShowMissionBox)
+                .hidden(viewModel.isShowMissionBox)
         }
         .padding(.top, 24)
         .padding(.bottom, 20)
@@ -48,28 +40,33 @@ struct PlantView: View {
 
 extension PlantView {
     private var dialogueBox: some View {
-        ZStack {
-            Image("DialogFrame")
-                .resizable()
-                .scaledToFit()
-                .overlay(alignment: .top) {
-                    VStack(alignment: .trailing, spacing: 0) {
-                        Text("하루에 30분씩 창문을 열어 두고 날아갈 연습을 하면 나아질 수 있을 것 같아.")
-                        
-                        Button {
-                            //TODO: show next Dialogue
-                        } label: {
-                            Image("DialogButton")
-                                .resizable()
-                                .frame(width: 16, height: 10)
-                        }
-                    }
-                    .padding(.vertical, 12)
-                    .padding(.horizontal, 14)
+        Image("DialogFrame")
+            .resizable()
+            .scaledToFit()
+            .overlay(alignment: .top) {
+                ZStack(alignment: .topLeading) {
+                    Text(viewModel.dialogueText)
+                        .font(.pretendard(size: 17.5, .regular))
+                        .foregroundStyle(Color.black)
+                        .multilineTextAlignment(.leading)
+                        .lineSpacing(1)
+                        .padding(.horizontal, 16)
+                    
+                    Image("DialogButton")
+                        .resizable()
+                        .frame(width: 16, height: 10)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+                        .padding(.bottom, 18)
+                        .padding(.trailing, 18)
                 }
-        }
-        .padding(.horizontal, 20)
-        .padding(.bottom, 26)
+                .padding(.vertical, 12)
+                
+            }
+            .padding(.horizontal, 20)
+            .padding(.bottom, 26)
+            .onTapGesture {
+                viewModel.showNextDialogue()
+            }
     }
     
     private var addNewPlantButton: some View {
@@ -97,14 +94,16 @@ extension PlantView {
                     Spacer()
                     
                     Button {
-                        isTapDoneButton.toggle()
-                        //TODO: Show Write Diary View
+                        viewModel.isTapDoneButton = true
+                        viewModel.completMission()
+                        // TODO: Show Write Diary View
                     } label: {
-                        Image(systemName: isTapDoneButton ? "checkmark.circle.fill" : "circle")
+                        Image(systemName: viewModel.isTapDoneButton ? "checkmark.circle.fill" : "circle")
                             .resizable()
                             .frame(width: 38, height: 38)
-                            .foregroundColor(isTapDoneButton ? .greenPrimary : .brownSecondary)
+                            .foregroundColor(viewModel.isTapDoneButton ? .greenPrimary : .brownSecondary)
                     }
+                    .disabled(viewModel.isDisableDoneButton)
                 }
                 .padding(.horizontal, 20)
             }
