@@ -82,7 +82,15 @@ extension MainView {
             
             Spacer()
             
-            Image("PotProgress1")
+            ProgressView(value: viewModel.progressValue, total: 100)
+                .frame(width: 119, height: 50)
+                .progressViewStyle(
+                    ProgressStyle(
+                        width: 119,
+                        color: .brown.opacity(0.8),
+                        text: viewModel.plantName
+                    )
+                )
         }
         .padding(.horizontal, 20)
         .padding(.top, 69)
