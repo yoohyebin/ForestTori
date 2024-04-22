@@ -16,35 +16,54 @@ struct MainView: View {
     @State private var isShowSelectPlantView = false
     
     var body: some View {
-        ZStack {
-            Image(gameManager.chapter.chatperBackgroundImage)
-                .resizable()
-                .ignoresSafeArea()
-            
-            VStack {
-                mainHeader
+        NavigationView {
+            ZStack {
+                Image(gameManager.chapter.chatperBackgroundImage)
+                    .resizable()
+                    .scaledToFit()
                 
-                Spacer()
+                VStack {
+                    mainHeader
+                    
+                    Spacer()
+                    
+                    PlantView(isShowSelectPlantView: $isShowSelectPlantView)
+                        .environmentObject(gameManager)
+                        .environmentObject(viewModel)
+                    
+                    customTabBar
+                }
                 
-                PlantView(isShowSelectPlantView: $isShowSelectPlantView)
-                    .environmentObject(gameManager)
-                    .environmentObject(viewModel)
+                if isShowSelectPlantView {
+                    Color.black.opacity(0.4)
+                    
+                    Text("식물 친구를 선택해주세요")
+                        .font(.titleM)
+                        .foregroundColor(.white)
+                        .padding(.top, 160)
+                        .frame(maxHeight: .infinity, alignment: .top)
+                    
+                    SelectPlantView(isShowSelectPlantView: $isShowSelectPlantView)
+                        .environmentObject(gameManager)
+                }
                 
-                customTabBar
+                if viewModel.isCompleteMission {
+                    Color.black.opacity(0.4)
+                    
+                    CompleteMissionView()
+                        .environmentObject(gameManager)
+                        .onAppear {
+                            gameManager.completeMission()
+                        }
+                }
             }
-            
-            showSelectPlantView
-            
-            showCompleteMission
-            
-            showHistoryView
-        }
-        .ignoresSafeArea()
-        .onChange(of: gameManager.isSelectPlant) {
-            if  gameManager.isSelectPlant {
-                viewModel.setNewPlant(plant: gameManager.user.selectedPlant)
-            } else {
-                viewModel.setEmptyPot()
+            .ignoresSafeArea()
+            .onChange(of: gameManager.isSelectPlant) {
+                if  gameManager.isSelectPlant {
+                    viewModel.setNewPlant(plant: gameManager.user.selectedPlant)
+                } else {
+                    viewModel.setEmptyPot()
+                }
             }
         }
     }
@@ -55,9 +74,9 @@ struct MainView: View {
 extension MainView {
     private var mainHeader: some View {
         HStack {
-            Button {
-                // TODO: Move to Garden
-            } label: {
+            NavigationLink(destination: GardenView()
+                .navigationBarBackButtonHidden(true)
+            ) {
                 Image("MainButton")
                     .resizable()
                     .scaledToFit()

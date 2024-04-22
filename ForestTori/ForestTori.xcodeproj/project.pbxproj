@@ -109,6 +109,8 @@
 		5BBABDE32BCD716800F51288 /* GardenARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBABDE22BCD716800F51288 /* GardenARViewModel.swift */; };
 		5BDA85472BCC156400C5C67C /* GardenARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDA85462BCC156400C5C67C /* GardenARView.swift */; };
 		5BE2F6302BC03AF90049A988 /* GardenScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2F62F2BC03AF90049A988 /* GardenScene.swift */; };
+		5BFED7C82BD65DF10051D91B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5BFED7C72BD65DF10051D91B /* Realm */; };
+		5BFED7CA2BD65DF10051D91B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5BFED7C92BD65DF10051D91B /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -222,8 +224,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E4AB2302BCD3EBE00ADB623 /* RealmSwift in Frameworks */,
-				0E4AB22E2BCD3EBE00ADB623 /* Realm in Frameworks */,
+				5BFED7CA2BD65DF10051D91B /* RealmSwift in Frameworks */,
+				5BFED7C82BD65DF10051D91B /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,8 +679,8 @@
 			);
 			name = ForestTori;
 			packageProductDependencies = (
-				0E4AB22D2BCD3EBE00ADB623 /* Realm */,
-				0E4AB22F2BCD3EBE00ADB623 /* RealmSwift */,
+				5BFED7C72BD65DF10051D91B /* Realm */,
+				5BFED7C92BD65DF10051D91B /* RealmSwift */,
 			);
 			productName = ForestTori;
 			productReference = 0EF5FE922B4FC02100D64E5E /* ForestTori.app */;
@@ -1081,12 +1083,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0E4AB22D2BCD3EBE00ADB623 /* Realm */ = {
+		5BFED7C72BD65DF10051D91B /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0E4AB22C2BCD3EBE00ADB623 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
-		0E4AB22F2BCD3EBE00ADB623 /* RealmSwift */ = {
+		5BFED7C92BD65DF10051D91B /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0E4AB22C2BCD3EBE00ADB623 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
