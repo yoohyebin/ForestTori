@@ -9,11 +9,15 @@ import SwiftUI
 
 struct HistoryView: View {
     @StateObject var viewModel = HistoryViewModel()
+    @FocusState private var isFocused: Bool
     
-    @State private var isShowCustomPopup = false
     @State private var isShowCameraPicker = false
     @State private var isShowPhotoLibraryPicker = false
     
+    @Binding var isComplete: Bool
+    @Binding var isShowHistoryView: Bool
+    @Binding var isTapDoneButton: Bool
+
     private let placeHolder = "오늘의 활동과 감정을 적어보세요"
     var plantName: String
     
@@ -22,7 +26,7 @@ struct HistoryView: View {
             hisoryViewHeader
             
             selectImageView
-                .aspectRatio(4/3, contentMode: .fit)
+                .aspectRatio(5/3, contentMode: .fit)
                 .padding(.horizontal)
             
             writeHistoryView
@@ -33,6 +37,10 @@ struct HistoryView: View {
         }
         .sheet(isPresented: $isShowPhotoLibraryPicker) {
             ImagePicker(selectedImage: $viewModel.selectedImage, sourceType: .photoLibrary)
+                .ignoresSafeArea()
+        }
+        .onTapGesture {
+            isFocused = false
         }
         .onAppear {
             viewModel.plantName = plantName
@@ -46,7 +54,10 @@ extension HistoryView {
     private var hisoryViewHeader: some View {
         HStack {
             Button {
-                // TODO: Dismiss
+                withAnimation {
+                    isShowHistoryView = false
+                    isTapDoneButton = false
+                }
             } label: {
                 Image(systemName: "xmark")
                     .foregroundStyle(.redPrimary)
@@ -61,13 +72,16 @@ extension HistoryView {
             
             Button {
                 viewModel.saveHistory()
+                isComplete = true
             } label: {
                 Text("완료")
                     .font(.subtitleM)
-                    .foregroundStyle(.greenSecondary)
+                    .foregroundStyle(viewModel.isCompleteButtonDisable ? .gray30 : .greenSecondary)
             }
+            .disabled(viewModel.isCompleteButtonDisable)
         }
         .padding(.horizontal, 20)
+        .padding(.vertical, 8)
     }
     
     private var selectImageView: some View {
@@ -75,22 +89,13 @@ extension HistoryView {
             if let image = viewModel.selectedImage {
                 Image(uiImage: image)
                     .resizable()
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
             } else {
-                RoundedRectangle(cornerRadius: 8)
-                    .foregroundStyle(.gray.opacity(0.2))
-                    .overlay(
-                        Image(systemName: "photo")
-                            .foregroundColor(.gray)
-                    )
-                    .onTapGesture {
-                        withAnimation {
-                            isShowCustomPopup.toggle()
-                        }
-                    }
-                    .overlay {
-                        selectImagePopup
-                            .hidden(isShowCustomPopup)
-                    }
+                ZStack {
+                    RoundedRectangle(cornerRadius: 8)
+                        .foregroundStyle(.gray.opacity(0.2))
+                    selectImagePopup
+                }
             }
         }
     }
@@ -100,11 +105,28 @@ extension HistoryView {
             .fill(Color.gray10)
             .stroke(.brownSecondary, lineWidth: 2)
             .overlay(alignment: .top) {
-                TextField(placeHolder, text: $viewModel.todayHistory, axis: .vertical)
+                TextField(
+                    placeHolder,
+                    text: Binding(
+                        get: {viewModel.todayHistory},
+                        set: { newValue, _ in
+                            if newValue.lastIndex(of: "\n") != nil {
+                                isFocused = false
+                            } else {
+                                viewModel.todayHistory = newValue
+                            }
+                        }),
+                    axis: .vertical)
+                    .focused($isFocused)
+                    .submitLabel(.done)
+                    .disableAutocorrection(true)
                     .tint(.greenSecondary)
                     .padding()
             }
-            .padding()
+            .padding(.horizontal)
+            .onTapGesture {
+                isFocused = true
+            }
     }
     
     private var selectImagePopup: some View {
@@ -113,6 +135,7 @@ extension HistoryView {
             
             VStack {
                 Button {
+                    isFocused = false
                     isShowCameraPicker = true
                 }label: {
                     HStack {
@@ -126,6 +149,7 @@ extension HistoryView {
                 Divider()
                 
                 Button {
+                    isFocused = false
                     isShowPhotoLibraryPicker = true
                 }label: {
                     HStack {
@@ -146,4 +170,8 @@ extension HistoryView {
             Spacer(minLength: 56)
         }
     }
+}
+
+#Preview {
+    MainView()
 }

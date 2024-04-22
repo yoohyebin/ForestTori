@@ -8,12 +8,27 @@
 import SwiftUI
 
 class HistoryViewModel: ObservableObject {
-    @Published var todayHistory = ""
-    @Published var selectedImage: UIImage?
+    @Published var todayHistory = "" {
+        didSet {
+            updateIsCompleteButtonDisable()
+        }
+    }
     
+    @Published var selectedImage: UIImage? {
+        didSet {
+            updateIsCompleteButtonDisable()
+        }
+    }
+    
+    @Published var isCompleteButtonDisable = true
+
     var plantName = ""
     
     func saveHistory() {
         RealmManager.shared.saveHistory(plantName: plantName, image: selectedImage, text: todayHistory)
+    }
+    
+    private func updateIsCompleteButtonDisable() {
+        isCompleteButtonDisable = todayHistory.isEmpty || selectedImage == nil
     }
 }
