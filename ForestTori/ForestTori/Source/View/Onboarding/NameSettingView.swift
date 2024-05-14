@@ -37,7 +37,7 @@ struct NameSettingView: View {
                     VStack(spacing: 0) {
                         TextField(placeholder, text: $name)
                             .accentColor(.greenSecondary)
-                            .onChange(of: name) {
+                            .onChange(of: name) { _ in
                                 checkNameAvailable(name)
                                 checkNameLength(name)
                             }
@@ -68,7 +68,11 @@ struct NameSettingView: View {
                     .background {
                         RoundedRectangle(cornerRadius: 50)
                             .fill(setButtonBackgroundColor())
-                            .stroke(setButtonBackgroundStroke(), lineWidth: 2)
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 50)
+                                    .stroke(setButtonBackgroundStroke(), lineWidth: 2
+                                    )
+                            }
                     }
             }
             .padding(20)

@@ -134,10 +134,12 @@ extension WriteHistoryView {
     private var writeHistoryView: some View {
         RoundedRectangle(cornerRadius: 5)
             .fill(Color.gray10)
-            .stroke(.brownSecondary, lineWidth: 2)
+            .overlay {
+                RoundedRectangle(cornerRadius: 5)
+                    .stroke(.brownSecondary, lineWidth: 2)
+            }
             .overlay(alignment: .top) {
-                TextField(
-                    placeHolder,
+                TextEditor(
                     text: Binding(
                         get: {viewModel.todayHistory},
                         set: { newValue, _ in
@@ -146,15 +148,22 @@ extension WriteHistoryView {
                             } else {
                                 viewModel.todayHistory = newValue
                             }
-                        }),
-                    axis: .vertical)
-                    .focused($isFocused)
-                    .submitLabel(.done)
-                    .disableAutocorrection(true)
-                    .tint(.greenSecondary)
-                    .font(.bodyM)
-                    .foregroundStyle(.gray50)
-                    .padding()
+                        })
+                )
+                .overlay(alignment: .topLeading) {
+                    Text(placeHolder)
+                        .foregroundStyle(viewModel.todayHistory.isEmpty ? .gray30 : .clear)
+                        .padding(.vertical, 8)
+                        .padding(.horizontal, 4)
+                }
+                .transparentScrolling()
+                .focused($isFocused)
+                .submitLabel(.done)
+                .disableAutocorrection(true)
+                .tint(.greenSecondary)
+                .font(.bodyM)
+                .foregroundStyle(.gray50)
+                .padding()
             }
             .padding(.horizontal)
             .onTapGesture {

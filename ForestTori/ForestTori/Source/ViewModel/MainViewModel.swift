@@ -128,7 +128,7 @@ class MainViewModel: ObservableObject {
         }
         
         do {
-            let url = URL(filePath: path)
+            let url = URL(fileURLWithPath: path)
             let data = try Data(contentsOf: url)
             let dataEncoded = String(data: data, encoding: .utf8)
             
