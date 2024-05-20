@@ -20,7 +20,6 @@
 		0E214B612BDFD52900558004 /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E214B602BDFD52900558004 /* HistoryDetailView.swift */; };
 		0E214B722BE7451600558004 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0E214B712BE7451600558004 /* Realm */; };
 		0E214B742BE7451600558004 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E214B732BE7451600558004 /* RealmSwift */; };
-		0E214B762BE752DE00558004 /* SpringPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E214B752BE752DE00558004 /* SpringPlants.tsv */; };
 		0E4AB2282BC90A4C00ADB623 /* ProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2272BC90A4C00ADB623 /* ProgressStyle.swift */; };
 		0E4AB22B2BCD3E7E00ADB623 /* WriteHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB22A2BCD3E7E00ADB623 /* WriteHistoryView.swift */; };
 		0E4AB2322BCD66A400ADB623 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AB2312BCD66A400ADB623 /* ImagePicker.swift */; };
@@ -32,10 +31,14 @@
 		0E58AB822B85BF5C00EB8C78 /* SelectPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB812B85BF5C00EB8C78 /* SelectPlantView.swift */; };
 		0E58AB842B8CAD1C00EB8C78 /* PlantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */; };
 		0E58AB8F2B8E05AA00EB8C78 /* CompleteMissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E58AB8E2B8E05AA00EB8C78 /* CompleteMissionView.swift */; };
-		0E6AB0E32BC115A300B12610 /* SummerPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E6AB0DE2BC115A300B12610 /* SummerPlants.tsv */; };
-		0E6AB0E42BC115A300B12610 /* Chapters.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E6AB0DF2BC115A300B12610 /* Chapters.tsv */; };
-		0E6AB0E62BC115A300B12610 /* AutumnPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E6AB0E12BC115A300B12610 /* AutumnPlants.tsv */; };
-		0E6AB0E72BC115A300B12610 /* WinterPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E6AB0E22BC115A300B12610 /* WinterPlants.tsv */; };
+		0E62B72C2BFB0C1C0011B34E /* Cottontree1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B72B2BFB0C1C0011B34E /* Cottontree1.scn */; };
+		0E62B72E2BFB0C240011B34E /* Cottontree2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B72D2BFB0C240011B34E /* Cottontree2.scn */; };
+		0E62B7302BFB0C2B0011B34E /* Cottontree3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B72F2BFB0C2B0011B34E /* Cottontree3.scn */; };
+		0E62B7362BFB103B0011B34E /* SummerPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B7312BFB103B0011B34E /* SummerPlants.tsv */; };
+		0E62B7372BFB103B0011B34E /* WinterPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B7322BFB103B0011B34E /* WinterPlants.tsv */; };
+		0E62B7382BFB103B0011B34E /* SpringPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B7332BFB103B0011B34E /* SpringPlants.tsv */; };
+		0E62B7392BFB103B0011B34E /* Chapters.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B7342BFB103B0011B34E /* Chapters.tsv */; };
+		0E62B73A2BFB103B0011B34E /* AutumnPlants.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 0E62B7352BFB103B0011B34E /* AutumnPlants.tsv */; };
 		0E9532FA2BDCB9580081DCE0 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9532F92BDCB9580081DCE0 /* HistoryView.swift */; };
 		0E9532FC2BDCBB1A0081DCE0 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9532FB2BDCBB1A0081DCE0 /* HistoryViewModel.swift */; };
 		0EADEA582B7DEB0C0036D190 /* ground_maple.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0EADEA532B7DEB0C0036D190 /* ground_maple.usdz */; };
@@ -64,9 +67,6 @@
 		0EEBB6C92B7DEA60003E09C6 /* Bubble.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6C82B7DEA60003E09C6 /* Bubble.scn */; };
 		0EEBB6CB2B7DEA65003E09C6 /* Gardenground.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6CA2B7DEA65003E09C6 /* Gardenground.scn */; };
 		0EEBB6EC2B7DEAD7003E09C6 /* Freesia.dae in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6D12B7DEAD6003E09C6 /* Freesia.dae */; };
-		0EEBB6ED2B7DEAD7003E09C6 /* Cottontree1.dae in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6D32B7DEAD7003E09C6 /* Cottontree1.dae */; };
-		0EEBB6EE2B7DEAD7003E09C6 /* Cottontree3.dae in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6D42B7DEAD7003E09C6 /* Cottontree3.dae */; };
-		0EEBB6EF2B7DEAD7003E09C6 /* Cottontree2.dae in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6D52B7DEAD7003E09C6 /* Cottontree2.dae */; };
 		0EEBB6F02B7DEAD7003E09C6 /* Dandelion2.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6D72B7DEAD7003E09C6 /* Dandelion2.scn */; };
 		0EEBB6F12B7DEAD7003E09C6 /* Dandelion3.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6D82B7DEAD7003E09C6 /* Dandelion3.scn */; };
 		0EEBB6F22B7DEAD7003E09C6 /* dandelion.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EEBB6D92B7DEAD7003E09C6 /* dandelion.png */; };
@@ -132,7 +132,6 @@
 		0E214B5E2BDFC85500558004 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		0E214B602BDFD52900558004 /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
 		0E214B642BE34B5A00558004 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
-		0E214B752BE752DE00558004 /* SpringPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpringPlants.tsv; sourceTree = "<group>"; };
 		0E4AB2272BC90A4C00ADB623 /* ProgressStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStyle.swift; sourceTree = "<group>"; };
 		0E4AB22A2BCD3E7E00ADB623 /* WriteHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteHistoryView.swift; sourceTree = "<group>"; };
 		0E4AB2312BCD66A400ADB623 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -144,10 +143,14 @@
 		0E58AB812B85BF5C00EB8C78 /* SelectPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlantView.swift; sourceTree = "<group>"; };
 		0E58AB832B8CAD1C00EB8C78 /* PlantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCardView.swift; sourceTree = "<group>"; };
 		0E58AB8E2B8E05AA00EB8C78 /* CompleteMissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteMissionView.swift; sourceTree = "<group>"; };
-		0E6AB0DE2BC115A300B12610 /* SummerPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SummerPlants.tsv; sourceTree = "<group>"; };
-		0E6AB0DF2BC115A300B12610 /* Chapters.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chapters.tsv; sourceTree = "<group>"; };
-		0E6AB0E12BC115A300B12610 /* AutumnPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnPlants.tsv; sourceTree = "<group>"; };
-		0E6AB0E22BC115A300B12610 /* WinterPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WinterPlants.tsv; sourceTree = "<group>"; };
+		0E62B72B2BFB0C1C0011B34E /* Cottontree1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cottontree1.scn; sourceTree = "<group>"; };
+		0E62B72D2BFB0C240011B34E /* Cottontree2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cottontree2.scn; sourceTree = "<group>"; };
+		0E62B72F2BFB0C2B0011B34E /* Cottontree3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cottontree3.scn; sourceTree = "<group>"; };
+		0E62B7312BFB103B0011B34E /* SummerPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SummerPlants.tsv; sourceTree = "<group>"; };
+		0E62B7322BFB103B0011B34E /* WinterPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WinterPlants.tsv; sourceTree = "<group>"; };
+		0E62B7332BFB103B0011B34E /* SpringPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SpringPlants.tsv; sourceTree = "<group>"; };
+		0E62B7342BFB103B0011B34E /* Chapters.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chapters.tsv; sourceTree = "<group>"; };
+		0E62B7352BFB103B0011B34E /* AutumnPlants.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutumnPlants.tsv; sourceTree = "<group>"; };
 		0E9532F92BDCB9580081DCE0 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		0E9532FB2BDCBB1A0081DCE0 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		0EADEA532B7DEB0C0036D190 /* ground_maple.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ground_maple.usdz; sourceTree = "<group>"; };
@@ -176,9 +179,6 @@
 		0EEBB6C82B7DEA60003E09C6 /* Bubble.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Bubble.scn; sourceTree = "<group>"; };
 		0EEBB6CA2B7DEA65003E09C6 /* Gardenground.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Gardenground.scn; sourceTree = "<group>"; };
 		0EEBB6D12B7DEAD6003E09C6 /* Freesia.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = Freesia.dae; sourceTree = "<group>"; };
-		0EEBB6D32B7DEAD7003E09C6 /* Cottontree1.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = Cottontree1.dae; sourceTree = "<group>"; };
-		0EEBB6D42B7DEAD7003E09C6 /* Cottontree3.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = Cottontree3.dae; sourceTree = "<group>"; };
-		0EEBB6D52B7DEAD7003E09C6 /* Cottontree2.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = Cottontree2.dae; sourceTree = "<group>"; };
 		0EEBB6D72B7DEAD7003E09C6 /* Dandelion2.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Dandelion2.scn; sourceTree = "<group>"; };
 		0EEBB6D82B7DEAD7003E09C6 /* Dandelion3.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Dandelion3.scn; sourceTree = "<group>"; };
 		0EEBB6D92B7DEAD7003E09C6 /* dandelion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dandelion.png; sourceTree = "<group>"; };
@@ -288,11 +288,11 @@
 		0E6AB0DD2BC1159700B12610 /* Chapters */ = {
 			isa = PBXGroup;
 			children = (
-				0E6AB0E12BC115A300B12610 /* AutumnPlants.tsv */,
-				0E6AB0DF2BC115A300B12610 /* Chapters.tsv */,
-				0E214B752BE752DE00558004 /* SpringPlants.tsv */,
-				0E6AB0DE2BC115A300B12610 /* SummerPlants.tsv */,
-				0E6AB0E22BC115A300B12610 /* WinterPlants.tsv */,
+				0E62B7352BFB103B0011B34E /* AutumnPlants.tsv */,
+				0E62B7342BFB103B0011B34E /* Chapters.tsv */,
+				0E62B7332BFB103B0011B34E /* SpringPlants.tsv */,
+				0E62B7312BFB103B0011B34E /* SummerPlants.tsv */,
+				0E62B7322BFB103B0011B34E /* WinterPlants.tsv */,
 			);
 			path = Chapters;
 			sourceTree = "<group>";
@@ -456,9 +456,9 @@
 		0EEBB6D22B7DEAD7003E09C6 /* Cottontree */ = {
 			isa = PBXGroup;
 			children = (
-				0EEBB6D32B7DEAD7003E09C6 /* Cottontree1.dae */,
-				0EEBB6D52B7DEAD7003E09C6 /* Cottontree2.dae */,
-				0EEBB6D42B7DEAD7003E09C6 /* Cottontree3.dae */,
+				0E62B72B2BFB0C1C0011B34E /* Cottontree1.scn */,
+				0E62B72D2BFB0C240011B34E /* Cottontree2.scn */,
+				0E62B72F2BFB0C2B0011B34E /* Cottontree3.scn */,
 			);
 			path = Cottontree;
 			sourceTree = "<group>";
@@ -755,14 +755,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EADEA912B7DEB4F0036D190 /* CactusAnimation2.scn in Resources */,
-				0E6AB0E42BC115A300B12610 /* Chapters.tsv in Resources */,
-				0EEBB6ED2B7DEAD7003E09C6 /* Cottontree1.dae in Resources */,
-				0EEBB6EE2B7DEAD7003E09C6 /* Cottontree3.dae in Resources */,
+				0E62B7392BFB103B0011B34E /* Chapters.tsv in Resources */,
 				5BA395672B7F54E10019A545 /* Pretendard-Bold.ttf in Resources */,
 				0E1AE71D2B80B9B2001C9A30 /* SummerCharacter.tsv in Resources */,
 				0EEBB6C92B7DEA60003E09C6 /* Bubble.scn in Resources */,
-				0E214B762BE752DE00558004 /* SpringPlants.tsv in Resources */,
 				0EADEA982B7DEB4F0036D190 /* DandelionAnimation1.scn in Resources */,
+				0E62B7302BFB0C2B0011B34E /* Cottontree3.scn in Resources */,
+				0E62B7372BFB103B0011B34E /* WinterPlants.tsv in Resources */,
 				0EADEA902B7DEB4F0036D190 /* CactusAnimation1.scn in Resources */,
 				0EEBB7022B7DEAD7003E09C6 /* Maple1.scn in Resources */,
 				5BA3956D2B7F55020019A545 /* Pretendard-Light.ttf in Resources */,
@@ -779,11 +778,11 @@
 				0EADEA852B7DEB4F0036D190 /* FreesiaAnimation.scn in Resources */,
 				0EADEA582B7DEB0C0036D190 /* ground_maple.usdz in Resources */,
 				0EADEA9A2B7DEB4F0036D190 /* Garden_CactusAnimation.scn in Resources */,
+				0E62B72C2BFB0C1C0011B34E /* Cottontree1.scn in Resources */,
 				0EEBB6CB2B7DEA65003E09C6 /* Gardenground.scn in Resources */,
 				0EADEA5A2B7DEB0C0036D190 /* ground_none.usdz in Resources */,
-				0E6AB0E72BC115A300B12610 /* WinterPlants.tsv in Resources */,
 				5BA395692B7F54EE0019A545 /* Pretendard-SemiBold.ttf in Resources */,
-				0E6AB0E62BC115A300B12610 /* AutumnPlants.tsv in Resources */,
+				0E62B72E2BFB0C240011B34E /* Cottontree2.scn in Resources */,
 				0EADEA8A2B7DEB4F0036D190 /* CottontreeAnimation1.scn in Resources */,
 				0EEBB6F92B7DEAD7003E09C6 /* Cactus1.scn in Resources */,
 				0EADEAA22B7DEB4F0036D190 /* MapleAnimation3.scn in Resources */,
@@ -791,17 +790,18 @@
 				0EADEA8B2B7DEB4F0036D190 /* CottontreeAnimation3.scn in Resources */,
 				0EADEAA32B7DEB4F0036D190 /* MapleAnimation1.scn in Resources */,
 				0EEBB6C72B7DDA6E003E09C6 /* Emptypot.scn in Resources */,
+				0E62B7382BFB103B0011B34E /* SpringPlants.tsv in Resources */,
 				0EEBB7002B7DEAD7003E09C6 /* Maple3.scn in Resources */,
 				0EADEA972B7DEB4F0036D190 /* DandelionAnimation3.scn in Resources */,
 				0EF5FE9D2B4FC02200D64E5E /* Preview Assets.xcassets in Resources */,
 				0EADEA592B7DEB0C0036D190 /* ground_cottontree.usdz in Resources */,
 				0EADEA9D2B7DEB4F0036D190 /* Garden_MapleAnimation.scn in Resources */,
 				0EEBB6F72B7DEAD7003E09C6 /* Cactus3.scn in Resources */,
+				0E62B73A2BFB103B0011B34E /* AutumnPlants.tsv in Resources */,
 				0E1AE71C2B80B9B2001C9A30 /* WinterCharacter.tsv in Resources */,
 				0EADEA9B2B7DEB4F0036D190 /* Garden_DandelionAnimation.scn in Resources */,
+				0E62B7362BFB103B0011B34E /* SummerPlants.tsv in Resources */,
 				0E1AE71F2B80B9B2001C9A30 /* AutumnCharacter.tsv in Resources */,
-				0E6AB0E32BC115A300B12610 /* SummerPlants.tsv in Resources */,
-				0EEBB6EF2B7DEAD7003E09C6 /* Cottontree2.dae in Resources */,
 				0EADEAA02B7DEB4F0036D190 /* Garden_CottontreeAnimation.scn in Resources */,
 				0EADEA5C2B7DEB0C0036D190 /* ground_cactus.usdz in Resources */,
 				0EEBB6EC2B7DEAD7003E09C6 /* Freesia.dae in Resources */,
@@ -951,7 +951,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1008,7 +1008,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1026,13 +1026,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ForestTori/Preview Content\"";
-				DEVELOPMENT_TEAM = 5Z238234D5;
+				DEVELOPMENT_TEAM = HQS8MXQ7B5;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ForestTori/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "ForestTori uses camera";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "ForestTori uses photo library";
+				INFOPLIST_KEY_NSCameraUsageDescription = "사진 촬영을 위해 카메라를 사용합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진을 불러오기 위해 앨범을 사용합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1042,7 +1042,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyebin.ForestTori;
+				PRODUCT_BUNDLE_IDENTIFIER = com.connected.ForestTori;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1062,13 +1062,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ForestTori/Preview Content\"";
-				DEVELOPMENT_TEAM = 5Z238234D5;
+				DEVELOPMENT_TEAM = HQS8MXQ7B5;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ForestTori/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "ForestTori uses camera";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "ForestTori uses photo library";
+				INFOPLIST_KEY_NSCameraUsageDescription = "사진 촬영을 위해 카메라를 사용합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진을 불러오기 위해 앨범을 사용합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1078,7 +1078,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyebin.ForestTori;
+				PRODUCT_BUNDLE_IDENTIFIER = com.connected.ForestTori;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
