@@ -12,6 +12,7 @@ import SceneKit
 struct GardenScene: UIViewRepresentable {
     @EnvironmentObject var gameManager: GameManager
     
+    //TODO: Garden Model로 바꾸기
     @Binding var selectedPlant: Plant?
     @Binding var showHistoryView: Bool
     
@@ -57,12 +58,15 @@ struct GardenScene: UIViewRepresentable {
             let touchLocation = gestureRecognize.location(in: sceneView)
             let hitTestResults = parent.sceneView.hitTest(touchLocation, options: nil)
             
+            //TODO: Garden Model로 바꾸기
             if let hitNode = hitTestResults.first?.node {
                 if let selectedName = hitNode.geometry?.name {
-                    if let selectedPlant = parent.gameManager.user.completedPlants.first(where: {$0.characterImage == selectedName}) {
-                        parent.selectedPlant =  selectedPlant
-                        parent.showHistoryView = true
-                    }
+//                    if let selectedPlant = parent.gameManager.user.completedPlants[0]?.first(where: {
+//                        $0.plantName == selectedName
+//                    }) {
+//                        parent.selectedPlant =  selectedPlant
+//                        parent.showHistoryView = true
+//                    }
                 }
             }
         }
@@ -98,26 +102,26 @@ extension GardenScene {
     private func addNode(index: Int) -> SCNNode? {
         let plantNode = SCNNode()
         
-        let plant = gameManager.user.completedPlants[index]
+        guard let plants = gameManager.user.completedPlants[index] else {return nil}
         
-        guard let plantScene = SCNScene(named: plant.garden3DFile) else {
-            return nil
+        for plant in plants {
+            guard let plantScene = SCNScene(named: plant.garden3DFile) else {break}
+            
+            let plantPositionX = plant.gardenPositionX
+            let plantPositionY = plant.gardenPositionY
+            let plantPositionZ = plant.gardenPositionZ
+            
+            let node = SCNNode()
+            
+            for childNode in plantScene.rootNode.childNodes {
+                node.addChildNode(childNode)
+            }
+            
+            node.position = SCNVector3(x: plantPositionX, y: plantPositionY, z: plantPositionZ)
+            node.scale = SCNVector3(x: 1.0, y: 1.0, z: 1.0)
+            
+            plantNode.addChildNode(node)
         }
-        
-        let plantPositionX = plant.gardenPositionX
-        let plantPositionY = plant.gardenPositionY
-        let plantPositionZ = plant.gardenPositionZ
-        
-        let node = SCNNode()
-        
-        for childNode in plantScene.rootNode.childNodes {
-            node.addChildNode(childNode)
-        }
-        
-        node.position = SCNVector3(x: plantPositionX, y: plantPositionY, z: plantPositionZ)
-        node.scale = SCNVector3(x: 1.0, y: 1.0, z: 1.0)
-        
-        plantNode.addChildNode(node)
         
         return plantNode
     }

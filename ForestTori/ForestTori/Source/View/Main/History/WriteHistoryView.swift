@@ -18,7 +18,7 @@ struct WriteHistoryView: View {
     
     @Binding var isComplete: Bool
     @Binding var isShowHistoryView: Bool
-    @Binding var isTapDoneButton: Bool
+    @Binding var currentStatus: MissionStatus
 
     private let placeHolder = "오늘의 활동과 감정을 적어보세요"
     var plantName: String
@@ -78,7 +78,7 @@ extension WriteHistoryView {
                 Button {
                     withAnimation {
                         isShowHistoryView = false
-                        isTapDoneButton = false
+                        currentStatus = .inProgress
                     }
                 } label: {
                     Text(Image(systemName: "chevron.backward"))
