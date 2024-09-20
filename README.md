@@ -2,8 +2,10 @@
 <p align="center">
     <img width="500" alt="image" src="https://github.com/user-attachments/assets/e7641f8a-3a38-4ee6-b6c3-26ed60815538">
 </p>
-  
+
 <a href='https://apps.apple.com/kr/app/%EC%88%B2%ED%86%A0%EB%A6%AC/id6502944860?l=en-GB'><img alt='Available on the App Store' src='https://user-images.githubusercontent.com/67373938/227817078-7aab7bea-3af0-4930-b341-1a166a39501d.svg' height='60px'/></a> 
+
+>**개발기간: 2024.03 ~ 진행 중**
 
 ## 📖 프로젝트 소개
 - 숲토리는 은둔 청년들이 생활 습관을 개선하고 자존감을 회복하도록 돕는 앱입니다.
