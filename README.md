@@ -1,4 +1,4 @@
-# 🌳 은둔청년 생활습관 개선 숲토리
+# 🌳 은둔청년 생활습관 개선 앱 숲토리
 <p align="center">
     <img width="500" alt="image" src="https://github.com/user-attachments/assets/e7641f8a-3a38-4ee6-b6c3-26ed60815538">
 </p>
